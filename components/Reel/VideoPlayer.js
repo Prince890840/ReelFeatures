@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Dimensions,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,11 +11,9 @@ import { ResizeMode, Video } from "expo-av";
 // progressbar
 import VideoProgressBar from "./VideoProgressBar";
 
-const VideoPlayer = ({ videoUrl }) => {
+const VideoPlayer = ({ videoUrl, onPlaybackStatusUpdate }) => {
   const videoRef = useRef(null);
   const [error, setError] = useState(false);
-  const [playbackStatus, setPlaybackStatus] = useState(null);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     if (videoRef.current && videoUrl) {
@@ -26,18 +23,6 @@ const VideoPlayer = ({ videoUrl }) => {
       });
     }
   }, [videoUrl]);
-
-  useEffect(() => {
-    if (playbackStatus) {
-      const { positionMillis, durationMillis } = playbackStatus;
-      const currentProgress = positionMillis / durationMillis;
-      setProgress(currentProgress);
-    }
-  }, [playbackStatus]);
-
-  const onPlaybackStatusUpdate = (status) => {
-    setPlaybackStatus(status);
-  };
 
   if (!videoUrl || error) {
     return (
@@ -49,7 +34,6 @@ const VideoPlayer = ({ videoUrl }) => {
 
   return (
     <View style={styles.container}>
-      <VideoProgressBar progress={progress} />
       <TouchableOpacity style={styles.videoWrapper}>
         <Video
           ref={videoRef}

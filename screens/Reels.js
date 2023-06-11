@@ -1,12 +1,21 @@
 import * as React from "react";
 import { Dimensions, SafeAreaView, StatusBar, StyleSheet } from "react-native";
-import ReelsList from "../components/Reel/ReelsList";
+import Reel from "../components/Reel/Reel";
+import { ReelCollections } from "../constant/data";
+import SwiperFlatList from "react-native-swiper-flatlist";
 
 const Reels = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
-      <ReelsList />
+      <SwiperFlatList
+        data={ReelCollections}
+        vertical={true}
+        renderItem={({ item, index }) => (
+          <Reel reelItem={item.reels_videos} index={index} />
+        )}
+        keyExtractor={(item) => item.id.toString()}
+      />
     </SafeAreaView>
   );
 };

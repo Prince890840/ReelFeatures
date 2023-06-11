@@ -1,11 +1,10 @@
-import { View, StyleSheet, Image, StatusBar } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import React from "react";
 import Button from "../components/UI/Button";
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
       <Image
         style={styles.image}
         source={{

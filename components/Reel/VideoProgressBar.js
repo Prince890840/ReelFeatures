@@ -5,7 +5,15 @@ import * as Progress from "react-native-progress";
 const VideoProgressBar = ({ progress }) => {
   return (
     <View style={styles.container}>
-      <Progress.Bar progress={progress} width={200} color="white" />
+      <Progress.Bar
+        progress={progress}
+        width={null}
+        height={6}
+        color="#FFFFFF"
+        unfilledColor="#CCCCCC"
+        borderWidth={0}
+        borderRadius={0}
+      />
     </View>
   );
 };
