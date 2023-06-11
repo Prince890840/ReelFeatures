@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Dimensions, SafeAreaView, StyleSheet } from "react-native";
+import { Dimensions, SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import ReelsList from "../components/Reel/ReelsList";
 
 const Reels = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="light-content" />
       <ReelsList />
     </SafeAreaView>
   );

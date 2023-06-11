@@ -15,6 +15,6 @@ export default VideoProgressBar;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginRight: 5,
+    marginTop: 25,
   },
 });

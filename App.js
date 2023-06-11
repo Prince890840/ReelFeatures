@@ -16,15 +16,15 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
-            name="Home"
+            name="Feed"
             component={Home}
             options={{
-              title: "Home",
-              tabBarLabel: "Home",
+              title: "Feed",
+              tabBarLabel: "Feed",
               tabBarIcon: ({ color, size }) => (
                 <Ionicons name="home" size={size} color={color} />
               ),
