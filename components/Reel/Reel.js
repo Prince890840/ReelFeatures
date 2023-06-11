@@ -9,7 +9,11 @@ const Reel = ({ reelItem }) => {
       <SwiperFlatList
         data={reelItem}
         horizontal={true}
-        renderItem={({ item }) => <VideoPlayer videoUrl={item.video.url} />}
+        renderItem={({ item }) => (
+          <View>
+            <VideoPlayer videoUrl={item.video.url} />
+          </View>
+        )}
         keyExtractor={(item) => item.video.url}
       />
     </View>

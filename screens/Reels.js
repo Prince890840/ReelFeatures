@@ -20,6 +20,5 @@ const styles = StyleSheet.create({
     width: windowWidth,
     height: windowHeight,
     backgroundColor: "black",
-    position: "relative",
   },
 });

@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen
